@@ -1,6 +1,6 @@
 dotnet new webapi --name Authentication
 
-dotnet new webapi --name Transaction
+dotnet new webapi --name Ledger
 
 dotnet new webapi --name Catalog
 
