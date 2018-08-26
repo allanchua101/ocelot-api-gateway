@@ -1,7 +1,7 @@
-dotnet new webapi --name ServiceA
+dotnet new webapi --name Authentication
 
-dotnet new webapi --name ServiceB
+dotnet new webapi --name Transaction
 
-dotnet new webapi --name ServiceC
+dotnet new webapi --name Catalog
 
 dotnet new webapi --name Gateway
