@@ -73,3 +73,72 @@ cat > ./Authentication/Properties/launchSettings.json <<EOL
   }
 }
 EOL
+
+cat > ./Authentication/wwwroot/index.html <<EOL
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i');
+  
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: #00BFFF;
+    text-align: center;
+}
+h1 {
+ color: white;
+ font-family: 'Roboto', sans-serif;
+}
+</style>
+</head>
+<body>
+<h1>Authentication Service</h1>
+</body>
+</html>
+EOL
+
+cat > ./Authentication/Startup.cs <<EOL
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using System.Collections.Generic;
+
+namespace Authentication
+{
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddMvc();
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseDefaultFiles(new DefaultFilesOptions
+            {
+                DefaultFileNames = new List<string> { "index.html" }
+            });
+            app.UseMvc();
+            app.UseStaticFiles();
+        }
+    }
+}
+EOL
