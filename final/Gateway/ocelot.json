@@ -1,0 +1,9 @@
+﻿{
+  "ReRoutes": [
+    {
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:52793"
+  }
+}
