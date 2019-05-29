@@ -5,7 +5,7 @@ This repository is a POC of simple and robust API gateway development using Ocel
 
 You would need the following to be able to reproduce the demo:  
 
-- .NET Core 2.0 and above
+- .NET Core 2.0 or above
 
 ## Disclamer
 
