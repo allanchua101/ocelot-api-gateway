@@ -12,5 +12,4 @@ This repository does not involve docker containers. However, you can try to chec
 You would need the following to be able to reproduce the demo:  
 
 - Visual Studio 2017
-- Docker
 - Any web browser
